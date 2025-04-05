@@ -1,10 +1,10 @@
-import Image from "next/image";
+
+import { AppNavbar } from "./components/Navbar/AppNavbar";
 
 export default function Home() {
   return (
     <>
-    <h1> Test 1
-    </h1>
+      <AppNavbar />
     </>
   );
 }
