@@ -80,11 +80,12 @@ export function FocusCards({ cards }: { cards: Card[] }) {
       </div>
 
       {selectedCard && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 px-4 backdrop-blur-md">
-          <div className="bg-white dark:bg-neutral-900 max-w-md w-full rounded-xl shadow-lg overflow-hidden relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent">
+          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+          <div className="relative bg-neutral-900 bg-opacity-50 max-w-md w-full rounded-xl shadow-lg overflow-hidden">
             <button
               onClick={() => setSelectedCard(null)}
-              className="absolute top-3 right-3 text-gray-600 dark:text-white text-xl"
+              className="absolute top-3 right-3 text-white text-xl"
             >
               &times;
             </button>
@@ -96,13 +97,13 @@ export function FocusCards({ cards }: { cards: Card[] }) {
               className="w-full h-64 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h2 className="text-2xl font-bold text-white mb-2">
                 {selectedCard.title}
               </h2>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-sm text-gray-300 mb-4">
                 {selectedCard.sub}
               </p>
-              <p className="text-base text-gray-700 dark:text-gray-300">
+              <p className="text-base text-gray-300">
                 {selectedCard.bio ||
                   "This is a short bio about the speaker. You can customize this with more detailed info."}
               </p>
