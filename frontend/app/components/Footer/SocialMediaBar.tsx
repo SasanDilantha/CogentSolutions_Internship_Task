@@ -6,7 +6,6 @@ import {
   IconBrandLinkedin,
   IconBrandX
 } from "@tabler/icons-react";
-import Image from "next/image";
 
 export function SocialMediaBar() {
   const links = [
