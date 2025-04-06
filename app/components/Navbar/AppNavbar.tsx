@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import { Hero } from "../Hero/Hero";
+import { About } from "../About/About";
 
 export function AppNavbar() {
   const navItems = [
@@ -84,6 +85,9 @@ export function AppNavbar() {
         </MobileNav>
       </Navbar>
       {/* Navbar */}
+
+      <Hero />
+      <About />
     </>
   );
 }

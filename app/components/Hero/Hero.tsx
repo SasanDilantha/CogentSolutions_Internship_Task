@@ -18,12 +18,14 @@ export function Hero() {
                     FINASTRA
                 </h1>
                 <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Spotlight <br /> which is not overused.
+                    Reimagine Banking: <br />
+                    Adapt. Evolve. Thrive.
                 </h1>
-                <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-                    A subtle yet effective spotlight effect, because the previous version
-                    is used a bit too much these days.
-                </p>
+                <div className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+                    <Typing text="Date: 9th April 2025" duration={0.3} />
+                    <Typing text="Time: 9:30 AM - 2:00 PM GMT+2" />
+                    <Typing text="The Nile Ritz-Carlton, Cairo, Egypt"/>
+                </div>
             </div>
         </div>
     );

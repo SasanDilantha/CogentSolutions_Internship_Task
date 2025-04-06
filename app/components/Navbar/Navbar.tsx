@@ -8,17 +8,17 @@ export function FloatingNavBar() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "#",
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "About",
-      link: "/about",
+      name: "Overview",
+      link: "#overview",
       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       name: "Contact",
-      link: "/contact",
+      link: "#contact",
       icon: (
         <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
