@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import axios from "axios";
 
 export function RegForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export function RegForm() {
     number: "",
     email: "",
     url: "",
+    agree:false,
   });
 
   const [agree, setAgree] = useState(false);
@@ -50,20 +52,22 @@ export function RegForm() {
     return true;
   };
 
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validateForm()) return;
 
+    // Ensure agree field is in formData
+    console.log(formData); // This will log formData, check if 'agree' exists
+
     try {
-      const res = await fetch("http://localhost:5000/register", {
-        method: "POST",
+      const res = await axios.post("http://127.0.0.1:5000/register", formData, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
       });
 
-      if (res.ok) {
+      if (res.status === 200) {
         alert("Registration successful!");
         setFormData({
           firstname: "",
@@ -73,17 +77,24 @@ export function RegForm() {
           number: "",
           email: "",
           url: "",
+          agree: false, // Reset agree field as well
         });
         setAgree(false);
       } else {
-        const errorData = await res.json();
-        alert(`Error: ${errorData.message || "Something went wrong."}`);
+        alert(`Error: ${res.data.message || "Something went wrong."}`);
       }
     } catch (error) {
-      alert("Server error. Please try again later.");
-      console.error(error);
+      if (axios.isAxiosError(error)) {
+        alert("Server error. Please try again later.");
+        console.error(error);
+      } else {
+        alert("An unexpected error occurred.");
+        console.error(error);
+      }
     }
   };
+
+
 
   return (
     <div className="min-h-[20rem] shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
