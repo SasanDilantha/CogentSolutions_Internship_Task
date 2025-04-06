@@ -114,7 +114,7 @@ const DummyContent = () => {
       <About />
       <Awards />
       <Register />
-      <Footer />
+      
     </div>
   );
 };

@@ -62,7 +62,6 @@ export function RegForm() {
           <Input id="url" placeholder="www.xyz.com" type="text" />
         </LabelInputContainer>
 
-        {/* ✅ Checkbox and Text Side-by-Side */}
         <div className="mb-6 flex items-start space-x-2">
           <input
             type="checkbox"
@@ -90,7 +89,7 @@ export function RegForm() {
           className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
         >
-          Sign up &rarr;
+          Register Now &rarr;
           <BottomGradient />
         </button>
       </form>
