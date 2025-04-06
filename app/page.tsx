@@ -1,6 +1,7 @@
 
 import { About } from "./components/About/About";
 import { Agenda } from "./components/Agenda/Agenda";
+import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
 import { AppNavbar } from "./components/Navbar/AppNavbar";
 import { FloatingNavBar } from "./components/Navbar/Navbar";
@@ -11,13 +12,14 @@ export default function Home() {
   return (
     <>
       <div className="relative w-full">
-        {/* <AppNavbar /> */}
-        <FloatingNavBar />
+        <AppNavbar />
+        {/* <FloatingNavBar />
         <Hero />
         <Overview />
         <Speakers />
         <Agenda />
-        <About />
+        <About /> */}
+        <Footer />
       </div>
 
     </>

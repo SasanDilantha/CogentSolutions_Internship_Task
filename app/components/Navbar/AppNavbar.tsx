@@ -13,6 +13,11 @@ import {
 import { useState } from "react";
 import { Hero } from "../Hero/Hero";
 import { About } from "../About/About";
+import { Overview } from "../Overview/Overview";
+import { Speakers } from "../Speakers/Speakers";
+import { Agenda } from "../Agenda/Agenda";
+import { Awards } from "../About/Awards";
+import { Register } from "../Reg/Register";
 
 export function AppNavbar() {
   const navItems = [
@@ -86,8 +91,24 @@ export function AppNavbar() {
       </Navbar>
       {/* Navbar */}
 
-      <Hero />
-      <About />
+      <DummyContent />
+
+      
     </>
   );
 }
+
+
+const DummyContent = () => {
+  return (
+    <div className="container mx-auto p-8 pt-24">
+      <Hero />
+      <Overview />
+      <Speakers />
+      <Agenda />
+      <About />
+      <Awards />
+      <Register />
+    </div>
+  );
+};
