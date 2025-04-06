@@ -9,17 +9,20 @@ export const Card = React.memo(
     index,
     hovered,
     setHovered,
+    setSelectedCard,
   }: {
     card: any;
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
+    setSelectedCard: React.Dispatch<React.SetStateAction<any | null>>;
   }) => (
     <div
+      onClick={() => setSelectedCard(card)}
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-full transition-all duration-300 ease-out",
+        "cursor-pointer rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-80 md:h-[400px] w-full transition-all duration-300 ease-out", // Increased card height here
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
@@ -35,11 +38,13 @@ export const Card = React.memo(
           hovered === index ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
-          {card.title}
-        </div>
-        <div className="text-l md:text-lg font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
-          {card.title}
+        <div className="text-start">
+          <div className="text-xl md:text-2xl font-semibold text-white mb-1">
+            {card.title}
+          </div>
+          <div className="text-sm md:text-base text-neutral-200">
+            {card.sub}
+          </div>
         </div>
       </div>
     </div>
@@ -50,23 +55,61 @@ Card.displayName = "Card";
 
 type Card = {
   title: string;
+  sub: string;
   src: string;
+  bio?: string;
 };
 
 export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
+  const [selectedCard, setSelectedCard] = useState<any | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-8 mb-8">
-      {cards.map((card, index) => (
-        <Card
-          key={card.title}
-          card={card}
-          index={index}
-          hovered={hovered}
-          setHovered={setHovered}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-8 mb-8">
+        {cards.map((card, index) => (
+          <Card
+            key={card.title}
+            card={card}
+            index={index}
+            hovered={hovered}
+            setHovered={setHovered}
+            setSelectedCard={setSelectedCard}
+          />
+        ))}
+      </div>
+
+      {selectedCard && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 px-4 backdrop-blur-md">
+          <div className="bg-white dark:bg-neutral-900 max-w-md w-full rounded-xl shadow-lg overflow-hidden relative">
+            <button
+              onClick={() => setSelectedCard(null)}
+              className="absolute top-3 right-3 text-gray-600 dark:text-white text-xl"
+            >
+              &times;
+            </button>
+            <Image
+              src={selectedCard.src}
+              alt={selectedCard.title}
+              width={600}
+              height={400}
+              className="w-full h-64 object-cover"
+            />
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                {selectedCard.title}
+              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                {selectedCard.sub}
+              </p>
+              <p className="text-base text-gray-700 dark:text-gray-300">
+                {selectedCard.bio ||
+                  "This is a short bio about the speaker. You can customize this with more detailed info."}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -6,7 +6,8 @@ import {
   Building,
   Phone,
   Mail,
-} from "lucide-react"; // You can use any icon library, this example uses lucide-react
+} from "lucide-react";
+import { SocialMediaBar } from "./SocialMediaBar";
 
 export function Footer() {
   return (
@@ -57,6 +58,21 @@ export function Footer() {
         </div>
       </div>
 
+      <hr className="border-neutral-800" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 items-center">
+        {/* Left Side: Copyright */}
+        <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+          © 2025 Cogent Solutions Event Management LLC. All Right Reserved
+        </p>
+
+        {/* Right Side: Social Media Bar aligned to right */}
+        <div className="flex justify-end mt-6 md:mt-0">
+          <SocialMediaBar />
+        </div>
+      </div>
+
+      {/* Background Animation */}
       <BackgroundBeams />
     </div>
   );

@@ -18,11 +18,16 @@ import { Speakers } from "../Speakers/Speakers";
 import { Agenda } from "../Agenda/Agenda";
 import { Awards } from "../About/Awards";
 import { Register } from "../Reg/Register";
+import { Footer } from "../Footer/Footer";
 
 export function AppNavbar() {
   const navItems = [
     {
-      name: "Event Overview",
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "Overview",
       link: "#overview",
     },
     {
@@ -34,7 +39,7 @@ export function AppNavbar() {
       link: "#agenda",
     },
     {
-      name: "About Finastra",
+      name: "About",
       link: "#about"
     },
   ];
@@ -49,7 +54,7 @@ export function AppNavbar() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Register Now</NavbarButton>
+            <NavbarButton variant="primary" href="#reg">Register Now</NavbarButton>
           </div>
         </NavBody>
 
@@ -109,6 +114,7 @@ const DummyContent = () => {
       <About />
       <Awards />
       <Register />
+      <Footer />
     </div>
   );
 };

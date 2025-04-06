@@ -172,7 +172,7 @@ export function Agenda() {
   ];
 
   return (
-    <section id="#agenda">
+    <section id="agenda">
       <div className="w-full">
         <Timeline data={data} />
       </div>
