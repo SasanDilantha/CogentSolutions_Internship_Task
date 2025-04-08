@@ -14,7 +14,7 @@ export function Topic_1({
   return (
     <div className="min-h-[67rem] w-full bg-black flex flex-col items-center justify-start overflow-hidden rounded-md px-4 pt-10">
       {/* Topic Title (Static) */}
-      <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-center text-white relative z-20 mb-4">
+      <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-l from-neutral-50 to-neutral-400 bg-opacity-50 relative z-20 mb-4">
         {topic}
       </h1>
 

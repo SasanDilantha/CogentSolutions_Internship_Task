@@ -14,7 +14,6 @@ export function Awards() {
                 />
             </div>
         </section>
-
     );
 }
 

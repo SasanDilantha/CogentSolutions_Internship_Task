@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import axios from "axios";
+import { div } from "framer-motion/client";
 
 export function RegForm() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ export function RegForm() {
     number: "",
     email: "",
     url: "",
-    agree:false,
+    agree: false,
   });
 
   const [agree, setAgree] = useState(false);
@@ -97,74 +98,82 @@ export function RegForm() {
 
 
   return (
-    <div className="min-h-[20rem] shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-      <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">Register Now</h2>
-      <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        Join us for an unforgettable experience!
+    <div className="relative mx-auto w-full max-w-2xl bg-white/80 dark:bg-black/50 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-12">
+      <h1 className="text-center text-2xl sm:text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-l from-neutral-50 to-neutral-400">
+        Register for Finastra
+      </h1>
+      <p className="text-center mt-2 sm:mt-4 text-sm sm:text-base text-neutral-600 dark:text-neutral-300">
+        Fill out the form to secure your spot at our exclusive event!
       </p>
 
-      <form className="my-8" onSubmit={handleSubmit}>
-        <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-          <LabelInputContainer>
-            <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" value={formData.firstname} onChange={handleChange} />
-          </LabelInputContainer>
-          <LabelInputContainer>
-            <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" value={formData.lastname} onChange={handleChange} />
-          </LabelInputContainer>
-        </div>
+      <form className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" onSubmit={handleSubmit}>
+        {/* First & Last Name */}
+        <LabelInputContainer>
+          <Label htmlFor="firstname">First name</Label>
+          <Input id="firstname" placeholder="Tyler" type="text" value={formData.firstname} onChange={handleChange} />
+        </LabelInputContainer>
+        <LabelInputContainer>
+          <Label htmlFor="lastname">Last name</Label>
+          <Input id="lastname" placeholder="Durden" type="text" value={formData.lastname} onChange={handleChange} />
+        </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
+        {/* Job Title & Company */}
+        <LabelInputContainer>
           <Label htmlFor="jobTitle">Job Title</Label>
-          <Input id="jobTitle" placeholder="ABC" type="text" value={formData.jobTitle} onChange={handleChange} />
+          <Input id="jobTitle" placeholder="Software Engineer" type="text" value={formData.jobTitle} onChange={handleChange} />
         </LabelInputContainer>
-
-        <LabelInputContainer className="mb-4">
+        <LabelInputContainer>
           <Label htmlFor="company">Company</Label>
-          <Input id="company" placeholder="XYZ@fc.com" type="text" value={formData.company} onChange={handleChange} />
+          <Input id="company" placeholder="XYZ Pvt Ltd" type="text" value={formData.company} onChange={handleChange} />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
+        {/* Phone & Email */}
+        <LabelInputContainer>
           <Label htmlFor="number">Mobile Number</Label>
           <Input id="number" placeholder="+94 7X XXX XXXX" type="text" value={formData.number} onChange={handleChange} />
         </LabelInputContainer>
-
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" value={formData.email} onChange={handleChange} />
+        <LabelInputContainer>
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" placeholder="you@example.com" type="email" value={formData.email} onChange={handleChange} />
         </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="url">Company Website URL</Label>
-          <Input id="url" placeholder="www.xyz.com" type="text" value={formData.url} onChange={handleChange} />
+        {/* Website */}
+        <LabelInputContainer className="sm:col-span-2">
+          <Label htmlFor="url">Company Website</Label>
+          <Input id="url" placeholder="https://yourcompany.com" type="text" value={formData.url} onChange={handleChange} />
         </LabelInputContainer>
 
-        <div className="mb-6 flex items-start space-x-2">
+        {/* Privacy Policy */}
+        <div className="sm:col-span-2 flex items-start space-x-3 text-sm text-neutral-700 dark:text-neutral-300">
           <input
             type="checkbox"
             id="privacyPolicy"
             checked={agree}
             onChange={() => setAgree(!agree)}
-            className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-600"
+            className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-2 dark:bg-neutral-800 dark:border-neutral-600"
           />
-          <label htmlFor="privacyPolicy" className="text-sm text-neutral-700 dark:text-neutral-300">
-            By filling out the registration form to attend our event, you agree and consent to{" "}
+          <label htmlFor="privacyPolicy">
+            By registering, you agree to our{" "}
             <a href="/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-400">
-              Cogent Solutions Privacy Policy
+              Privacy Policy
             </a>.
           </label>
         </div>
 
-        <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
-          type="submit"
-        >
-          Register Now &rarr;
-          <BottomGradient />
-        </button>
+        {/* Submit Button */}
+        <div className="sm:col-span-2">
+          <button
+            type="submit"
+            className="group relative h-12 w-full rounded-lg bg-gradient-to-br from-black to-neutral-600 font-semibold text-white shadow-inner dark:from-zinc-900 dark:to-zinc-900"
+          >
+            Register Now →
+            <BottomGradient />
+          </button>
+        </div>
       </form>
     </div>
+
+
   );
 }
 
