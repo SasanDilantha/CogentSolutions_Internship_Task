@@ -66,7 +66,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-8xl mx-auto md:px-8 w-full mt-8 mb-8">
         {cards.map((card, index) => (
           <Card
             key={card.title}
@@ -81,20 +81,21 @@ export function FocusCards({ cards }: { cards: Card[] }) {
 
       {selectedCard && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent">
-          <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
-          <div className="relative bg-neutral-900 bg-opacity-50 max-w-md w-full rounded-xl shadow-lg overflow-hidden">
+          <div className="absolute inset-0 bg-opacity-50 backdrop-blur-md"></div>
+          <div className="relative bg-neutral-500 bg-opacity-50 max-w-md w-full rounded-xl shadow-lg overflow-hidden">
             <button
               onClick={() => setSelectedCard(null)}
-              className="absolute top-3 right-3 text-white text-xl"
+              className="absolute top-3 right-5 text-gray-500 text-3xl"
             >
               &times;
             </button>
+
             <Image
               src={selectedCard.src}
               alt={selectedCard.title}
               width={600}
               height={400}
-              className="w-full h-64 object-cover"
+              className="w-full object-cover"
             />
             <div className="p-6">
               <h2 className="text-2xl font-bold text-white mb-2">
@@ -104,7 +105,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
                 {selectedCard.sub}
               </p>
               <p className="text-base text-gray-300">
-                {selectedCard.bio ||
+               BIO : {selectedCard.bio ||
                   "This is a short bio about the speaker. You can customize this with more detailed info."}
               </p>
             </div>
