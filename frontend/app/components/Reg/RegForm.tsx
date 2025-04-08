@@ -107,7 +107,6 @@ export function RegForm() {
       </p>
 
       <form className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" onSubmit={handleSubmit}>
-        {/* First & Last Name */}
         <LabelInputContainer>
           <Label htmlFor="firstname">First name</Label>
           <Input id="firstname" placeholder="Tyler" type="text" value={formData.firstname} onChange={handleChange} />
@@ -116,8 +115,6 @@ export function RegForm() {
           <Label htmlFor="lastname">Last name</Label>
           <Input id="lastname" placeholder="Durden" type="text" value={formData.lastname} onChange={handleChange} />
         </LabelInputContainer>
-
-        {/* Job Title & Company */}
         <LabelInputContainer>
           <Label htmlFor="jobTitle">Job Title</Label>
           <Input id="jobTitle" placeholder="Software Engineer" type="text" value={formData.jobTitle} onChange={handleChange} />
@@ -126,8 +123,6 @@ export function RegForm() {
           <Label htmlFor="company">Company</Label>
           <Input id="company" placeholder="XYZ Pvt Ltd" type="text" value={formData.company} onChange={handleChange} />
         </LabelInputContainer>
-
-        {/* Phone & Email */}
         <LabelInputContainer>
           <Label htmlFor="number">Mobile Number</Label>
           <Input id="number" placeholder="+94 7X XXX XXXX" type="text" value={formData.number} onChange={handleChange} />
@@ -136,14 +131,10 @@ export function RegForm() {
           <Label htmlFor="email">Email</Label>
           <Input id="email" placeholder="you@example.com" type="email" value={formData.email} onChange={handleChange} />
         </LabelInputContainer>
-
-        {/* Website */}
         <LabelInputContainer className="sm:col-span-2">
           <Label htmlFor="url">Company Website</Label>
           <Input id="url" placeholder="https://yourcompany.com" type="text" value={formData.url} onChange={handleChange} />
         </LabelInputContainer>
-
-        {/* Privacy Policy */}
         <div className="sm:col-span-2 flex items-start space-x-3 text-sm text-neutral-700 dark:text-neutral-300">
           <input
             type="checkbox"
@@ -159,8 +150,6 @@ export function RegForm() {
             </a>.
           </label>
         </div>
-
-        {/* Submit Button */}
         <div className="sm:col-span-2">
           <button
             type="submit"

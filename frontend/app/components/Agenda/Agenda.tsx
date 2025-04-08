@@ -11,9 +11,6 @@ export function Agenda() {
           <p className="text-neutral-800 dark:text-neutral-200 text-l md:text-lg font-normal mb-8">
             Registration & Welcome Coffee
           </p>
-          {/* <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p> */}
         </div>
       ),
     },
@@ -93,9 +90,6 @@ export function Agenda() {
           <p className="text-neutral-800 dark:text-neutral-200 text-l md:text-lg font-normal mb-8">
             Coffee Break & Networking
           </p>
-          {/* <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p> */}
         </div>
       ),
     },
@@ -161,9 +155,6 @@ export function Agenda() {
           <p className="text-neutral-800 dark:text-neutral-200 text-l md:text-lg font-normal mb-8">
             Lunch
           </p>
-          {/* <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p> */}
         </div>
       ),
     },

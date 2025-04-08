@@ -13,12 +13,9 @@ export function Topic_1({
 }: OverviewSectionProps) {
   return (
     <div className="min-h-[67rem] w-full bg-black flex flex-col items-center justify-start overflow-hidden rounded-md px-4 pt-10">
-      {/* Topic Title (Static) */}
       <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-l from-neutral-50 to-neutral-400 bg-opacity-50 relative z-20 mb-4">
         {topic}
       </h1>
-
-      {/* Sparkles Effect */}
       <div className="w-full sm:w-[40rem] h-40 relative mb-10">
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
@@ -52,8 +49,6 @@ export function Topic_1({
               Join us on April 9th in Cairo, Egypt, for Finastra's Universal Banking Forum, "Reimagine Banking:
               Adapt. Evolve. Thrive." This exclusive event is designed to help you navigate and excel in the rapidly evolving banking landscape.
             </p>
-
-            {/* Meaty part - Meteor effect */}
             <Meteors number={20} />
           </div>
         </div>

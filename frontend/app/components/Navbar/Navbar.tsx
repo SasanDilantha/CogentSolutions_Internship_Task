@@ -31,13 +31,6 @@ export function FloatingNavBar() {
       link: "#about",
       icon: <IconUsersGroup className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
-    // {
-    //   name: "Contact",
-    //   link: "#contact",
-    //   icon: (
-    //     <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
-    //   ),
-    // },
   ];
   return (
     <div className="relative  w-full">

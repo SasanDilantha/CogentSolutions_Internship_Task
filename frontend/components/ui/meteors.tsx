@@ -19,8 +19,7 @@ export const Meteors = ({
     >
       {meteors.map((el, idx) => {
         const meteorCount = number || 20;
-        // Calculate position to evenly distribute meteors across container width
-        const position = idx * (800 / meteorCount) - 400; // Spread across 800px range, centered
+        const position = idx * (800 / meteorCount) - 400; 
 
         return (
           <span
@@ -31,10 +30,10 @@ export const Meteors = ({
               className,
             )}
             style={{
-              top: "-40px", // Start above the container
+              top: "-40px", 
               left: position + "px",
-              animationDelay: Math.random() * 5 + "s", // Random delay between 0-5s
-              animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s", // Keep some randomness in duration
+              animationDelay: Math.random() * 5 + "s",
+              animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s",
             }}
           ></span>
         );

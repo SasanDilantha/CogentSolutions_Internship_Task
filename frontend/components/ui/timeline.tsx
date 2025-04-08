@@ -53,14 +53,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 isLeft ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              {/* Time Bubble */}
               <div className="relative flex-shrink-0 w-36 md:w-48 flex justify-center md:justify-end md:pr-4 md:pl-4">
                 <div className="bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 px-4 py-2 rounded-full text-sm md:text-base shadow">
                   {item.title}
                 </div>
               </div>
-
-              {/* Content Card */}
               <div
                 className={`relative w-full md:max-w-[50%] bg-white dark:bg-neutral-900 shadow-lg border border-neutral-100 dark:border-neutral-800 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl`}
               >
@@ -69,8 +66,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
           );
         })}
-
-        {/* Timeline Line – visible on both mobile and desktop */}
         <div
           style={{ height: `${height}px` }}
           className="absolute top-0 left-[33px] md:left-1/2 -translate-x-0 md:-translate-x-1 w-[2px] bg-gradient-to-b from-transparent via-neutral-300 dark:via-neutral-700 to-transparent"

@@ -49,7 +49,6 @@ export function AppNavbar() {
   return (
     <>
       <Navbar>
-        {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
@@ -57,8 +56,6 @@ export function AppNavbar() {
             <NavbarButton variant="primary" href="#reg">Register Now</NavbarButton>
           </div>
         </NavBody>
-
-        {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
             <NavbarLogo />
