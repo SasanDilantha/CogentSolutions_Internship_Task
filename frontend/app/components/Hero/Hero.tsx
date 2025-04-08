@@ -75,9 +75,11 @@ export function Hero() {
         </div>
 
         <div className="mt-8">
-          <button className="px-6 py-3 bg-black/30 backdrop-blur-md border border-white/20 text-white font-semibold rounded-xl shadow-lg hover:bg-white/10 hover:shadow-xl transition duration-300">
-            Register Now
-          </button>
+          <Link href="#reg">
+            <button className="px-6 py-3 bg-black/30 backdrop-blur-md border border-white/20 text-white font-semibold rounded-xl shadow-lg hover:bg-white/10 hover:shadow-xl transition duration-300">
+              Register Now
+            </button>
+          </Link>
         </div>
 
       </div>
