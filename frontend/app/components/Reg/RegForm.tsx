@@ -58,8 +58,7 @@ export function RegForm() {
     e.preventDefault();
     if (!validateForm()) return;
 
-    // Ensure agree field is in formData
-    console.log(formData); // This will log formData, check if 'agree' exists
+    //console.log(formData);
 
     try {
       const res = await axios.post("http://127.0.0.1:5000/register", formData, {
@@ -78,7 +77,7 @@ export function RegForm() {
           number: "",
           email: "",
           url: "",
-          agree: false, // Reset agree field as well
+          agree: false,
         });
         setAgree(false);
       } else {
@@ -145,7 +144,7 @@ export function RegForm() {
           />
           <label htmlFor="privacyPolicy">
             By registering, you agree to our{" "}
-            <a href="/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-400">
+            <a href="https://cogentsolutions.ae/privacy-policy" className="text-blue-600 hover:underline dark:text-blue-400">
               Privacy Policy
             </a>.
           </label>
