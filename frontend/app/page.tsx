@@ -4,6 +4,7 @@ import { Awards } from "./components/About/Awards";
 import { Agenda } from "./components/Agenda/Agenda";
 import { Footer } from "./components/Footer/Footer";
 import { Hero } from "./components/Hero/Hero";
+import HeroNew from "./components/Hero/HeroNew";
 import { AppNavbar } from "./components/Navbar/AppNavbar";
 import { FloatingNavBar } from "./components/Navbar/Navbar";
 import { Overview } from "./components/Overview/Overview";
@@ -17,6 +18,7 @@ export default function Home() {
         {/* <AppNavbar /> */}
         <FloatingNavBar />
         <Hero />
+        {/* <HeroNew /> */}
         <Overview />
         <Speakers />
         <Agenda />
